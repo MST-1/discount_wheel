@@ -1,0 +1,120 @@
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+
+}
+.container{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+
+
+}
+.container .spin_box{
+
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1em;
+    border: 4px solid black;
+    cursor:pointer;
+}
+.container .spin_box::before{
+
+
+    content: '';
+    position: absolute;
+    top: -30px;
+    width: 20px;
+    height: 30px;
+    background-color: brown;
+    clip-path: polygon(50% 0%, 3% 100%, 93% 100%);
+
+}
+.container .wheel{
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(129, 127, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #5a5555,
+    0 0 0 15px white,
+    0 0 0 10px black;
+    overflow: hidden;
+    transition: transform 5s ease-in-out;
+
+
+}
+
+.container .wheel .number{
+
+
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin:bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+     
+
+}
+
+.container .wheel .number span{
+
+
+    position: relative;
+    transform: rotate(45deg);
+    font-size: 1.5em;
+}
+.container .wheel .number span ::after{
+
+    content: ' ';
+    position: absolute;
+    font-size: 0.75em;
+    font-weight: 500;
+}
+.tag{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+    position: absolute;
+    top: 100px;
+    font-size: 50px;
+    color: chartreuse;
+
+}
